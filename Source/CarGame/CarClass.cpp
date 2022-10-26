@@ -29,6 +29,11 @@ void ACarClass::BeginPlay()
 	
 }
 
+void ACarClass::MoveCar( float moveValue )
+{
+	UE_LOG( LogTemp, Warning, TEXT("Moving value %f"), moveValue );
+}
+
 // Called every frame
 void ACarClass::Tick(float DeltaTime)
 {
@@ -40,5 +45,7 @@ void ACarClass::Tick(float DeltaTime)
 void ACarClass::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis( TEXT( "MoveForward" ), this, &ACarClass::MoveCar );
 }
 

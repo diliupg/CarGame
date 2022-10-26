@@ -33,6 +33,10 @@ private:
 	UPROPERTY( EditAnywhere )
 	class UCameraComponent* CarCamera;
 
+	// Functions
+
+	void MoveCar( float moveValue );
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
